@@ -7,9 +7,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // <-- NgMode
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { BaseLayoutComponent } from './components/base-layout/base-layout.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HomePageComponent, ProductListComponent, BaseLayoutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
