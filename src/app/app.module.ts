@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzTableModule } from 'ng-zorro-antd/table';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // <-- NgModel lives here
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminHeaderComponent } from './components/admin/admin-header/admin-header.component';
@@ -28,7 +25,7 @@ import { EditProductComponent } from './pages/admin/product-manager/edit-product
 import { AddCategoryComponent } from './pages/admin/category-manager/add-category/add-category.component';
 import { EditCategoryComponent } from './pages/admin/category-manager/edit-category/edit-category.component';
 import { ListCategoryComponent } from './pages/admin/category-manager/list-category/list-category.component';
-
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,11 +54,10 @@ import { ListCategoryComponent } from './pages/admin/category-manager/list-categ
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NzButtonModule,
-    NzTableModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent],
