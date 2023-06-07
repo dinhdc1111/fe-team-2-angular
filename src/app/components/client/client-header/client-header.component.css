@@ -1,0 +1,232 @@
+/* header CSS */
+.top-bar ul li a {
+  color: #000;
+  text-decoration: none;
+}
+.number-phone,
+.Account,
+.Cart {
+  padding-left: 5px;
+}
+.Account,
+.Cart {
+  font-weight: 100;
+}
+.top-bar {
+  background: #f2f2f2;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px 0;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 28px;
+}
+.top-bar__left {
+  text-align: left;
+}
+.top-bar__left ul {
+  padding-left: 40px;
+}
+.top-bar__left a svg,
+.top-bar__right a svg {
+  margin-top: -4px;
+  vertical-align: middle;
+}
+.top-bar__right {
+  text-align: right;
+}
+.top-bar__right ul {
+  padding-right: 40px;
+}
+.site-header {
+  display: grid;
+  grid-template-columns: 17% 67% 17%;
+  padding: 0 40px;
+  height: 88px;
+}
+.site-header .logo {
+  margin: auto 0;
+}
+.logo-4men {
+  height: 60px;
+}
+.affixed {
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-shadow: 0 0px 10px rgb(0 0 0 / 20%);
+  animation: fadeInDown 0.6s both;
+  z-index: 999;
+}
+@keyframes fadeInDown {
+  from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+  }
+  to {
+      opacity: 100%;
+      -webkit-transform: none;
+      transform: none;
+  }
+}
+.nav,
+.footer {
+  margin: auto;
+}
+.nav li {
+  display: inline-block;
+  position: relative;
+}
+.top-bar ul li {
+  display: inline-block;
+  margin-right: 50px;
+}
+.top-bar__bottom59 {
+  margin-bottom: 59px;
+}
+.nav li a {
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 20px;
+  color: #000;
+  text-decoration: none;
+  line-height: 55px;
+  padding: 0 15px;
+  text-transform: uppercase;
+}
+.menu ul .nav {
+  text-align: center;
+}
+
+.hover {
+  margin-top: 20px;
+  color: #000;
+  font-family: "Montserrat";
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 13px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.hover:hover {
+  color: rgb(119, 118, 118);
+}
+.form-controlCus,
+.btn-dark {
+  border-radius: 5rem;
+}
+.slider {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.slider a img {
+  margin: auto;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.input-group {
+  margin-top: 33px;
+}
+.search {
+  position: relative;
+}
+#inputForm1 {
+  margin-top: 26px;
+  border-radius: 22px;
+  background-color: #fefefe;
+  border: solid 1px #a7a7a7;
+  padding: 8px 0 8px 15px;
+  width: 100%;
+}
+.btnCus {
+  font-size: 0;
+  border: none;
+  background: url(https://res.cloudinary.com/do9rcgv5s/image/upload/v1669028862/assignment_ReactTS/search_avnmbo.svg);
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  right: 15px;
+  top: 35px;
+  cursor: pointer;
+}
+.slider,
+.sub-banner {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+.banner_inner img {
+  width: 100%;
+}
+#minPrice,
+#maxPrice {
+  width: 130px;
+  margin-right: 15px;
+}
+.title-search{
+  margin-bottom: 10px;
+}
+.form-input {
+  padding: 0 20px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+  transition: 0.25s ease;
+}
+.form-input:focus-visible {
+  outline: none;
+}
+.form-input:focus {
+  border-color: #6a5af9;
+}
+.form-field {
+  position: relative;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+/* Button */
+.btn5-hover {
+  width: 50px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50%;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.btn5-hover:hover {
+  background-position: 100% 0;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.btn5-hover:focus {
+  outline: none;
+}
+.btn5-hover.btn5 {
+  background-image: linear-gradient(
+      to right,
+      #25aae1,
+      #4481eb,
+      #04befe,
+      #3f86ed
+  );
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}
