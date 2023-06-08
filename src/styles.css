@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .material-icons {
-  font-family: 'Material Icons' !important;
+  font-family: "Material Icons" !important;
 }
 a {
   text-decoration: none !important;
@@ -13,4 +13,28 @@ a {
   margin: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+}
+@layer components {
+  .card {
+    @apply bg-white text-gray-700
+      w-72 min-h-[10rem] shadow-lg rounded-md overflow-hidden;
+  }
+  .category {
+    @apply px-3 py-1 rounded-full text-xs bg-gray-100;
+  }
+  .product-name {
+    @apply font-semibold text-2xl
+      overflow-ellipsis overflow-hidden whitespace-nowrap;
+  }
+  .discount-percent {
+    @apply bg-green-500 px-1.5 py-0.5 rounded-md text-xs text-white;
+  }
+  .btn-primary {
+    @apply bg-yellow-500/80
+      px-6 py-2 rounded-md text-white font-medium tracking-wider transition;
+  }
+  .btn-icon {
+    @apply flex-grow
+    flex justify-center items-center bg-gray-300/60 transition rounded-md
+}
 }
