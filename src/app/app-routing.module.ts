@@ -4,7 +4,6 @@ import { ClientLayoutComponent } from './pages/layouts/client-layout/client-layo
 import { HomeComponent } from './pages/client/home/home.component';
 import { SigninComponent } from './pages/client/auth/signin/signin.component';
 import { SignupComponent } from './pages/client/auth/signup/signup.component';
-import { ProductListComponent } from './pages/client/product-list/product-list.component';
 import { AdminLayoutComponent } from './pages/layouts/admin-layout/admin-layout.component';
 import { DashboardManagerComponent } from './pages/admin/dashboard-manager/dashboard-manager.component';
 
@@ -16,7 +15,6 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'signin', component: SigninComponent },
       { path: 'signup', component: SignupComponent },
-      { path: 'products', component: ProductListComponent },
     ],
   },
   {
