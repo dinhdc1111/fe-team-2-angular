@@ -9,7 +9,6 @@ import { AdminFooterComponent } from './components/admin/admin-footer/admin-foot
 import { ClientHeaderComponent } from './components/client/client-header/client-header.component';
 import { ClientFooterComponent } from './components/client/client-footer/client-footer.component';
 import { ClientMenuComponent } from './components/client/client-menu/client-menu.component';
-import { ClientSlideComponent } from './components/client/client-slide/client-slide.component';
 import { AdminLayoutComponent } from './pages/layouts/admin-layout/admin-layout.component';
 import { ClientLayoutComponent } from './pages/layouts/client-layout/client-layout.component';
 import { AboutComponent } from './pages/client/about/about.component';
@@ -26,6 +25,7 @@ import { AddCategoryComponent } from './pages/admin/category-manager/add-categor
 import { EditCategoryComponent } from './pages/admin/category-manager/edit-category/edit-category.component';
 import { ListCategoryComponent } from './pages/admin/category-manager/list-category/list-category.component';
 import {MatIconModule} from '@angular/material/icon';
+import { ProductListComponent } from './pages/client/product-list/product-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +34,6 @@ import {MatIconModule} from '@angular/material/icon';
     ClientHeaderComponent,
     ClientFooterComponent,
     ClientMenuComponent,
-    ClientSlideComponent,
     AdminLayoutComponent,
     ClientLayoutComponent,
     AboutComponent,
@@ -50,6 +49,7 @@ import {MatIconModule} from '@angular/material/icon';
     AddCategoryComponent,
     EditCategoryComponent,
     ListCategoryComponent,
+    ProductListComponent,
   ],
   imports: [
     BrowserModule,
