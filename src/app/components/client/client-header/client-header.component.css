@@ -1,4 +1,21 @@
 /* header CSS */
+/* Icon */
+.iconTop {
+  background-image: url("https://res.cloudinary.com/do9rcgv5s/image/upload/v1686251251/assignment_FE2/kn9mirmydinmudsigvar.png");
+  width: 20px;
+  height: 20px;
+  float: left;
+  background-size: cover;
+}
+.icon-1-top {
+  background-position: 134px 0;
+}
+.icon-4-top {
+  background-position: 75px 1px;
+}
+.icon-5-top {
+  background-position: 20px 0;
+}
 .top-bar ul li a {
   color: #000;
   text-decoration: none;
@@ -63,14 +80,14 @@
 }
 @keyframes fadeInDown {
   from {
-      opacity: 0;
-      -webkit-transform: translate3d(0, -100%, 0);
-      transform: translate3d(0, -100%, 0);
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
   }
   to {
-      opacity: 100%;
-      -webkit-transform: none;
-      transform: none;
+    opacity: 100%;
+    -webkit-transform: none;
+    transform: none;
   }
 }
 .nav,
@@ -173,7 +190,7 @@
   width: 130px;
   margin-right: 15px;
 }
-.title-search{
+.title-search {
   margin-bottom: 10px;
 }
 .form-input {
@@ -222,11 +239,11 @@
 }
 .btn5-hover.btn5 {
   background-image: linear-gradient(
-      to right,
-      #25aae1,
-      #4481eb,
-      #04befe,
-      #3f86ed
+    to right,
+    #25aae1,
+    #4481eb,
+    #04befe,
+    #3f86ed
   );
   box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
 }
