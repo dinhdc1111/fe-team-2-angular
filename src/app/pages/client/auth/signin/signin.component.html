@@ -1,1 +1,25 @@
-<p>signin works!</p>
+<div class="body">
+  <div class="container">
+    <h1 class="text-4xl">Sign In</h1>
+    <form [formGroup]="formSignin" (ngSubmit)="onHandleSubmit()">
+      <div class="form-control">
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="Email"
+        />
+      </div>
+      <div class="form-control">
+        <input
+          type="password"
+          formControlName="password"
+          id="password"
+          placeholder="Password"
+        />
+      </div>
+      <button class="btn">submit</button>
+      <div class="signup_link">Not a member? <a href="./signup">Signup</a></div>
+    </form>
+  </div>
+</div>
