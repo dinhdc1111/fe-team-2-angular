@@ -7,6 +7,8 @@ import { SignupComponent } from './pages/client/auth/signup/signup.component';
 import { ProductListComponent } from './pages/client/product-list/product-list.component';
 import { AdminLayoutComponent } from './pages/layouts/admin-layout/admin-layout.component';
 import { DashboardManagerComponent } from './pages/admin/dashboard-manager/dashboard-manager.component';
+import { ListProductComponent } from './pages/admin/product-manager/list-product/list-product.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -22,6 +24,7 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminLayoutComponent,
+    canActivate: [AuthGuard],
     children: [{ path: '', component: DashboardManagerComponent }],
   },
 ];

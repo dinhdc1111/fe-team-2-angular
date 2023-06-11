@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +29,7 @@ import { EditProductComponent } from './pages/admin/product-manager/edit-product
 import { AddCategoryComponent } from './pages/admin/category-manager/add-category/add-category.component';
 import { EditCategoryComponent } from './pages/admin/category-manager/edit-category/edit-category.component';
 import { ListCategoryComponent } from './pages/admin/category-manager/list-category/list-category.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,8 @@ import { ListCategoryComponent } from './pages/admin/category-manager/list-categ
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
