@@ -6,6 +6,7 @@ import { SigninComponent } from './pages/client/auth/signin/signin.component';
 import { SignupComponent } from './pages/client/auth/signup/signup.component';
 import { AdminLayoutComponent } from './pages/layouts/admin-layout/admin-layout.component';
 import { DashboardManagerComponent } from './pages/admin/dashboard-manager/dashboard-manager.component';
+import { ProductDetailComponent } from './pages/client/product-detail/product-detail.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'signin', component: SigninComponent },
       { path: 'signup', component: SignupComponent },
+      {path: 'product/:id',component:ProductDetailComponent}
     ],
   },
   {
