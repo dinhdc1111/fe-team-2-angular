@@ -1,3 +1,4 @@
+import { AddProductComponent } from './pages/admin/product-manager/add-product/add-product.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClientLayoutComponent } from './pages/layouts/client-layout/client-layout.component';
@@ -7,9 +8,10 @@ import { SignupComponent } from './pages/client/auth/signup/signup.component';
 import { AdminLayoutComponent } from './pages/layouts/admin-layout/admin-layout.component';
 import { DashboardManagerComponent } from './pages/admin/dashboard-manager/dashboard-manager.component';
 import { ProductDetailComponent } from './pages/client/product-detail/product-detail.component';
-import { ListProductComponent } from './pages/admin/product-manager/list-product/list-product.component';
 import { AuthGuard } from './auth.guard';
 
+import { EditProductComponent } from './pages/admin/product-manager/edit-product/edit-product.component';
+import { ListProductComponent } from './pages/admin/product-manager/list-product/list-product.component';
 const routes: Routes = [
   {
     path: '',
@@ -25,7 +27,13 @@ const routes: Routes = [
     path: 'admin',
     component: AdminLayoutComponent,
     canActivate: [AuthGuard],
-    children: [{ path: '', component: DashboardManagerComponent }],
+    children: [
+      { path: '', component: DashboardManagerComponent },
+      { path: 'add', component: AddProductComponent },
+      { path: 'list', component: ListProductComponent },
+      { path: 'edit/:id', component: EditProductComponent }
+
+    ],
   },
 ];
 
@@ -33,4 +41,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
