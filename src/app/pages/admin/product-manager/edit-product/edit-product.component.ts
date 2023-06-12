@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IProduct } from 'src/app/interfaces/Product';
 import { ProductService } from 'src/app/services/product.service';
 import { CategoriesService } from 'src/app/services/services/categories.service';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-edit-product',
   templateUrl: './edit-product.component.html',
@@ -26,7 +26,9 @@ export class EditProductComponent {
   constructor(private productService: ProductService,
     private route: ActivatedRoute,
     private categoriesService: CategoriesService,
-    private formBuilder: FormBuilder) {
+    private formBuilder: FormBuilder,
+    private toastor: ToastrService,
+    private router: Router) {
     this.getCategories()
     this.route.paramMap.subscribe(param => {
       const id = param.get('id')
@@ -67,6 +69,8 @@ export class EditProductComponent {
       if (id)
         this.productService.Update(id, product).subscribe(item => {
           console.log(item)
+          this.toastor.success('Update sản phẩm thành công', 'Thành công');
+          this.router.navigate(['/admin/list'])
         })
     })
     console.log(1);
