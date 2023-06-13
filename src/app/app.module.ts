@@ -29,9 +29,11 @@ import { EditCategoryComponent } from './pages/admin/category-manager/edit-categ
 import { ListCategoryComponent } from './pages/admin/category-manager/list-category/list-category.component';
 import { ProductListComponent } from './pages/client/product-list/product-list.component';
 import { ToastrModule } from 'ngx-toastr';
+import { ListUserComponent } from './pages/admin/users/list-user/list-user.component';
 import { AuthInterceptor } from './auth.interceptor';
 import { CartPageComponent } from './pages/client/cart/cart-page/cart-page.component';
 import { PayComponent } from './pages/client/pay/pay.component';
+
 
 @NgModule({
   declarations: [
@@ -56,7 +58,8 @@ import { PayComponent } from './pages/client/pay/pay.component';
     AddCategoryComponent,
     EditCategoryComponent,
     ListCategoryComponent,
-    ProductListComponent,
+    ProductListComponent,  
+    ListUserComponent,
     CartPageComponent,
     PayComponent,
   ],
