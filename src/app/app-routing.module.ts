@@ -12,6 +12,9 @@ import { AuthGuard } from './auth.guard';
 
 import { EditProductComponent } from './pages/admin/product-manager/edit-product/edit-product.component';
 import { ListProductComponent } from './pages/admin/product-manager/list-product/list-product.component';
+import { AddCategoryComponent } from './pages/admin/category-manager/add-category/add-category.component';
+import { ListCategoryComponent } from './pages/admin/category-manager/list-category/list-category.component';
+import { EditCategoryComponent } from './pages/admin/category-manager/edit-category/edit-category.component';
 const routes: Routes = [
   {
     path: '',
@@ -31,8 +34,10 @@ const routes: Routes = [
       { path: '', component: DashboardManagerComponent },
       { path: 'add', component: AddProductComponent },
       { path: 'list', component: ListProductComponent },
-      { path: 'edit/:id', component: EditProductComponent }
-
+      { path: 'edit/:id', component: EditProductComponent },
+      { path: 'addCate', component: AddCategoryComponent },
+      { path: 'listCate', component: ListCategoryComponent },
+      { path: 'editCate/:id', component: EditCategoryComponent }
     ],
   },
 ];
