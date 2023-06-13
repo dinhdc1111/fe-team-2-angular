@@ -10,7 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductDetailComponent {
   product: any = {
-   
+
   }
   constructor(
     private route: ActivatedRoute,
@@ -20,12 +20,9 @@ export class ProductDetailComponent {
       const id = param.get('id');
       this.productService.getProductById(id!).subscribe(product => {
         this.product = product;
-        console.log(this.product.product.name);
       })
-      
-      
     })
   }
-    
+
 }
 

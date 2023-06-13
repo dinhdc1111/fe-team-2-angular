@@ -8,10 +8,18 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent {
+  searchTerm: string = '';
   products: IProduct[] = [];
+  allProducts: IProduct[] = [];
   constructor(private productService: ProductService) {
     this.productService.getAll().subscribe((data) => {
       this.products = data.product;
+      this.allProducts = data.product;
     });
+  }
+  searchProduct() {
+    this.products = this.allProducts.filter((product) =>
+      product.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
   }
 }

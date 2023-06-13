@@ -12,6 +12,7 @@ import { AuthGuard } from './auth.guard';
 
 import { EditProductComponent } from './pages/admin/product-manager/edit-product/edit-product.component';
 import { ListProductComponent } from './pages/admin/product-manager/list-product/list-product.component';
+import { ProductListComponent } from './pages/client/product-list/product-list.component';
 const routes: Routes = [
   {
     path: '',
@@ -20,25 +21,24 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'signin', component: SigninComponent },
       { path: 'signup', component: SignupComponent },
+      { path: 'products', component: ProductListComponent },
       { path: 'product/:id', component: ProductDetailComponent },
     ],
   },
   {
     path: 'admin',
     component: AdminLayoutComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       { path: '', component: DashboardManagerComponent },
-      { path: 'add', component: AddProductComponent },
-      { path: 'list', component: ListProductComponent },
-      { path: 'edit/:id', component: EditProductComponent }
-
+      { path: 'products', component: ListProductComponent },
+      { path: 'product/add', component: AddProductComponent },
+      { path: 'product/edit/:id', component: EditProductComponent },
     ],
   },
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
