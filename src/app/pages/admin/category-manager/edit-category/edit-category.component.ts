@@ -11,7 +11,7 @@ import { CategoryService } from 'src/app/services/category.service';
 })
 export class EditCategoryComponent {
   category: ICategory = {
-    name : '',
+    name: '',
   };
   cateForm = this.formBuilder.group({
     name: ['', [Validators.required]],
@@ -24,7 +24,7 @@ export class EditCategoryComponent {
   ) {
     this.router.paramMap.subscribe((params) => {
       const id = params.get('id');
-      
+
       this.CategoryService.update(id).subscribe(
         (data) => {
           this.category = data;
@@ -37,7 +37,7 @@ export class EditCategoryComponent {
       );
     });
   }
-  get validate(){
+  get validate() {
     return this.cateForm.controls
   }
   onHandleSubmit() {
@@ -53,7 +53,7 @@ export class EditCategoryComponent {
           this.routers.navigate(['/admin/listCate'])
         });
       }
-      }
+    }
 
   }
 }

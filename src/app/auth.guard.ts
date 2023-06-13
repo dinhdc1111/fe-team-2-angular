@@ -23,12 +23,8 @@ export class AuthGuard implements CanActivate {
     | boolean
     | UrlTree {
     const user = this.authService.isAuthenticated();
-    console.log(user);
+    // console.log(user);
 
-    if (user?.user?.role === 'admin') {
-      this.router.navigate(['/signin']);
-      return true;
-    }
     return false;
   }
 }

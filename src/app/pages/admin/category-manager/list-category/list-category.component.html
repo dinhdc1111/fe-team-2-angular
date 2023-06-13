@@ -1,46 +1,45 @@
-<a
-class="my-[12px] ml-[550px] group relative inline-block overflow-hidden border border-indigo-600 px-8 py-3 focus:outline-none focus:ring"
-[routerLink]="['/admin/addCate']"
->
-<span
-  class="absolute inset-y-0 left-0 w-[2px] bg-indigo-600 transition-all group-hover:w-full group-active:bg-indigo-500"
-></span>
+<a class="my-[12px] ml-[550px] group relative inline-block overflow-hidden border border-indigo-600 px-8 py-3 focus:outline-none focus:ring"
+  [routerLink]="['/admin/addCate']">
+  <span
+    class="absolute inset-y-0 left-0 w-[2px] bg-indigo-600 transition-all group-hover:w-full group-active:bg-indigo-500"></span>
 
-<span
-  class="relative text-sm font-medium text-indigo-600 transition-colors group-hover:text-white"
->
-  Thêm mới danh mục
-</span>
+  <span class="relative text-sm font-medium text-indigo-600 transition-colors group-hover:text-white">
+    Thêm mới danh mục
+  </span>
 </a>
 
 <div class="overflow-x-auto rounded-lg border border-gray-200">
-<table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
-  <thead class="ltr:text-left rtl:text-right">
-    <tr>
-      <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-        ID
-      </th>
-      <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-        Tên sản phẩm
-      </th>
-    </tr>
-  </thead>
+  <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+    <thead class="ltr:text-left rtl:text-right">
+      <tr>
+        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+          ID
+        </th>
+        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+          Tên sản phẩm
+        </th>
+      </tr>
+    </thead>
 
-  <tbody class="divide-y divide-gray-200" >
+    <tbody class="divide-y divide-gray-200">
       <tr class="text-center" *ngFor="let cate of categorylist; index as i">
         <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
           {{ i + 1 }}
         </td>
         <td class="">{{cate.name}}</td>
         <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-          <button class="mr-[12px] inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500" (click)="delete(cate._id!)" >
+          <button
+            class="mr-[12px] inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
+            (click)="delete(cate._id!)">
             Xóa
           </button>
-          <a class="inline-block rounded border border-current px-8 py-3 text-sm font-medium text-indigo-600 transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:text-indigo-500" [routerLink]="['/admin/editCate',cate._id]" >
+
+          <a class="inline-block rounded border border-current px-8 py-3 text-sm font-medium text-indigo-600 transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:text-indigo-500"
+            [routerLink]="['/admin/editCate',cate._id]">
             Sửa
           </a>
         </td>
       </tr>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 </div>

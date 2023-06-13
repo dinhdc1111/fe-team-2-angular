@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class CategoryService {
 
-    constructor(private http: HttpClient) { }
-   getAll(): Observable<any> {
+  constructor(private http: HttpClient) { }
+  getAll(): Observable<any> {
     return this.http.get<any>(`http://localhost:3000/api/categories`)
   }
   getByID(id: string): Observable<{ category: ICategory }> {
@@ -21,8 +21,9 @@ export class CategoryService {
   create(category: any): Observable<any> {
     return this.http.post<any>(`http://localhost:3000/api/categories`, category)
   }
-  update( category: any): Observable<any> {
-    const {_id,...data}=category
+
+  update(category: any): Observable<any> {
+    const { _id, ...data } = category
     return this.http.put<any>(`http://localhost:3000/api/categories/${_id}`, data)
   }
 }

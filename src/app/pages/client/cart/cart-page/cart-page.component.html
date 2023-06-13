@@ -1,0 +1,159 @@
+<div *ngIf="carts.length > 0">
+  <section class="bg-gray-100 py-8">
+    <div class="container mx-auto mt-10">
+      <div class="flex shadow-md my-10">
+        <div class="w-full bg-white px-10 py-10">
+          <div class="flex justify-between border-b pb-8">
+            <h1 class="font-semibold text-2xl mt-4">Giỏ hàng</h1>
+          </div>
+
+          <div class="flex mt-10 mb-5">
+            <input
+              id="check-full-prd"
+              type="checkbox"
+              class="font-semibold text-gray-600 text-xs uppercase w-1/5"
+              autocomplete="off"
+              (change)="selectAllItems()"
+            />
+            <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">
+              Sản phẩm
+            </h3>
+            <h3
+              class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center"
+            >
+              Số lượng
+            </h3>
+            <h3
+              class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center"
+            >
+              Giá
+            </h3>
+            <h3
+              class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center"
+            >
+              Tổng
+            </h3>
+            <h3
+              class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center"
+            >
+              Options
+            </h3>
+          </div>
+
+          <div id="cart-list">
+            <div
+              *ngFor="let product of carts; let i = index"
+              class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5"
+            >
+              <input
+                type="checkbox"
+                class="font-semibold text-gray-600 text-xs uppercase w-1/5"
+                autocomplete="off"
+              />
+              <div class="flex w-2/5">
+                <!-- product -->
+                <h3 class="flex-1">{{ product.name }}</h3>
+                <!-- <div class="w-24">
+                  <img class="h-24 w-24" alt="" />
+                </div> -->
+              </div>
+
+              <div class="flex justify-center w-1/5">
+                <div
+                  class="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1"
+                >
+                  <button
+                    (click)="handleIncrementCart(i, product.quantity)"
+                    class="bg-gray-200 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none"
+                  >
+                    +
+                  </button>
+                  <input
+                    type="number"
+                    class="outline-none focus:outline-none text-center w-full bg-gray-100 font-semibold text-md hover:text-black focus:text-black md:text-basecursor-default flex items-center text-gray-700 outline-none"
+                    [value]="product.quantity"
+                    (change)="handleUpdateCart(i, $event)"
+                    min="0"
+                  />
+
+                  <button
+                    type="button"
+                    (click)="handleDecrementCart(i, product.quantity)"
+                    class="bg-gray-200 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer"
+                  >
+                    <span class="m-auto text-2xl font-thin">-</span>
+                  </button>
+                </div>
+                <!--  -->
+              </div>
+              <span class="text-center w-1/5 font-semibold text-sm"
+                ><span class="prd-price">{{ product.price }}</span> VNĐ</span
+              >
+              <span class="text-center w-1/5 font-semibold text-sm"
+                ><span class="prd-total">{{ subtotal(product) }}</span>
+                VNĐ</span
+              >
+              <button
+                type="button"
+                name="btn-remove-prd"
+                class="text-center w-1/5 font-semibold text-sm text-red-800"
+                (click)="handleRemoveCart(i)"
+              >
+                Xóa
+              </button>
+            </div>
+          </div>
+
+          <div class="flex justify-between pt-4 items-center">
+            <a
+              href="= BASE_URL ?>"
+              class="flex font-semibold text-indigo-600 text-sm"
+            >
+              <svg
+                class="fill-current mr-2 text-indigo-600 w-4"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"
+                />
+              </svg>
+              Tiếp tục mua hàng
+            </a>
+
+            <div class="flex-1">
+              <button id="destroyAll" type="button" class="hidden ml-4">
+                Xóa tất cả
+              </button>
+            </div>
+
+            <div class="flex space-x-3 font-bold text-xl uppercase">
+              <span id="total"
+                >Tổng thanh toán (<span id="product-amount"></span>
+                {{ totalQuantity }} sản phẩm ) :
+                <span name="total" id="product-total"
+                  >{{ totalPrice }} VNĐ</span
+                >
+              </span>
+            </div>
+          </div>
+
+          <div class="border-t mt-8">
+            <a
+              routerLink="/pay"
+              id="submid-cart"
+              class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full"
+              disabled
+            >
+              Thanh toán
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="text-center" *ngIf="carts.length == 0">
+  <button type="button" class="close" data-dismiss="alert"></button>
+  <strong class="text-red-800 text-4xl">Giỏ hàng rỗng</strong>
+</div>

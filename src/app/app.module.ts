@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +30,10 @@ import { ListCategoryComponent } from './pages/admin/category-manager/list-categ
 import { ProductListComponent } from './pages/client/product-list/product-list.component';
 import { ToastrModule } from 'ngx-toastr';
 import { ListUserComponent } from './pages/admin/users/list-user/list-user.component';
+import { AuthInterceptor } from './auth.interceptor';
+import { CartPageComponent } from './pages/client/cart/cart-page/cart-page.component';
+import { PayComponent } from './pages/client/pay/pay.component';
+
 
 @NgModule({
   declarations: [
@@ -53,11 +58,13 @@ import { ListUserComponent } from './pages/admin/users/list-user/list-user.compo
     AddCategoryComponent,
     EditCategoryComponent,
     ListCategoryComponent,
-    ProductListComponent,
-    
+    ProductListComponent,  
     ListUserComponent,
+    CartPageComponent,
+    PayComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -66,7 +73,11 @@ import { ListUserComponent } from './pages/admin/users/list-user/list-user.compo
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
