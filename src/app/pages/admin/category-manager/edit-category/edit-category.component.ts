@@ -11,10 +11,10 @@ import { CategoryService } from 'src/app/services/category.service';
 })
 export class EditCategoryComponent {
   category: ICategory = {
-    name : '',
+    name: '',
   };
   cateForm = this.formBuilder.group({
-    "name": ['', [Validators.required]],
+    name: ['', [Validators.required]],
   });
   constructor(
     private formBuilder: FormBuilder,
@@ -24,13 +24,11 @@ export class EditCategoryComponent {
   ) {
     this.router.paramMap.subscribe((params) => {
       const id = params.get('id');
-      console.log(id);
-      
-      this.CategoryService.update(id!).subscribe(
-        (data) => {
-          console.log(data);
-          this.category = data;
 
+      this.CategoryService.update(id).subscribe(
+        (data) => {
+          this.category = data;
+          console.log(data)
           this.cateForm.patchValue({
             name: data.name,
           });
@@ -39,23 +37,23 @@ export class EditCategoryComponent {
       );
     });
   }
-  get validate(){
+  get validate() {
     return this.cateForm.controls
   }
   onHandleSubmit() {
-      const id = this.router.snapshot.paramMap.get('id');
-      if(id){
-          const cate: ICategory = {
-          _id: id,
-          name: this.cateForm.value.name || ''
-        };
-      if(this.cateForm.valid){
-        this.CategoryService.update(cate).subscribe((cate:any) => {
-          alert(`Sửa sản phẩm thành công: ${cate.name}`);
-          this.routers.navigate(['/admin/category'])
+    const id = this.router.snapshot.paramMap.get('id');
+    if (id) {
+      const cate: ICategory = {
+        _id: id,
+        name: this.cateForm.value.name || ''
+      };
+      if (this.cateForm.valid) {
+        this.CategoryService.update(cate).subscribe((cate: any) => {
+          alert(`Sửa sản phẩm thành công`);
+          this.routers.navigate(['/admin/listCate'])
         });
       }
-      }
+    }
 
   }
 }
