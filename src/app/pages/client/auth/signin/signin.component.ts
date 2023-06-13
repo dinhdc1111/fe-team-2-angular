@@ -15,7 +15,7 @@ export class SigninComponent {
     private authServies: AuthService,
     private toastor: ToastrService,
     private router: Router
-  ) {}
+  ) { }
 
   formSignin = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
@@ -32,7 +32,7 @@ export class SigninComponent {
 
       this.authServies.signin(user).subscribe(
         (response: any) => {
-          console.log(response);
+          // console.log(response);
 
           if (!response.user) {
             this.toastor.success(response.message);
