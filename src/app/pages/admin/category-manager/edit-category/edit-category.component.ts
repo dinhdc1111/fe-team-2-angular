@@ -14,7 +14,7 @@ export class EditCategoryComponent {
     name : '',
   };
   cateForm = this.formBuilder.group({
-    "name": ['', [Validators.required]],
+    name: ['', [Validators.required]],
   });
   constructor(
     private formBuilder: FormBuilder,
@@ -24,13 +24,11 @@ export class EditCategoryComponent {
   ) {
     this.router.paramMap.subscribe((params) => {
       const id = params.get('id');
-      console.log(id);
       
-      this.CategoryService.update(id!).subscribe(
+      this.CategoryService.update(id).subscribe(
         (data) => {
-          console.log(data);
           this.category = data;
-
+          console.log(data)
           this.cateForm.patchValue({
             name: data.name,
           });
@@ -51,8 +49,8 @@ export class EditCategoryComponent {
         };
       if(this.cateForm.valid){
         this.CategoryService.update(cate).subscribe((cate:any) => {
-          alert(`Sửa sản phẩm thành công: ${cate.name}`);
-          this.routers.navigate(['/admin/category'])
+          alert(`Sửa sản phẩm thành công`);
+          this.routers.navigate(['/admin/listCate'])
         });
       }
       }

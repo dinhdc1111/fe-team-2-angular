@@ -28,6 +28,7 @@ import { EditCategoryComponent } from './pages/admin/category-manager/edit-categ
 import { ListCategoryComponent } from './pages/admin/category-manager/list-category/list-category.component';
 import { ProductListComponent } from './pages/client/product-list/product-list.component';
 import { ToastrModule } from 'ngx-toastr';
+import { ListUserComponent } from './pages/admin/users/list-user/list-user.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,8 @@ import { ToastrModule } from 'ngx-toastr';
     EditCategoryComponent,
     ListCategoryComponent,
     ProductListComponent,
+    
+    ListUserComponent,
   ],
   imports: [
     BrowserModule,

@@ -22,6 +22,7 @@ export class CategoryService {
     return this.http.post<any>(`http://localhost:3000/api/categories`, category)
   }
   update( category: any): Observable<any> {
-    return this.http.put<any>(`http://localhost:3000/api/categories/${category._id}`, category)
+    const {_id,...data}=category
+    return this.http.put<any>(`http://localhost:3000/api/categories/${_id}`, data)
   }
 }

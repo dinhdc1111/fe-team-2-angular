@@ -15,6 +15,7 @@ import { ListProductComponent } from './pages/admin/product-manager/list-product
 import { AddCategoryComponent } from './pages/admin/category-manager/add-category/add-category.component';
 import { ListCategoryComponent } from './pages/admin/category-manager/list-category/list-category.component';
 import { EditCategoryComponent } from './pages/admin/category-manager/edit-category/edit-category.component';
+import { ListUserComponent } from './pages/admin/users/list-user/list-user.component';
 const routes: Routes = [
   {
     path: '',
@@ -37,7 +38,8 @@ const routes: Routes = [
       { path: 'edit/:id', component: EditProductComponent },
       { path: 'addCate', component: AddCategoryComponent },
       { path: 'listCate', component: ListCategoryComponent },
-      { path: 'editCate/:id', component: EditCategoryComponent }
+      { path: 'editCate/:id', component: EditCategoryComponent },
+      {path: 'listUser',component:ListUserComponent}
     ],
   },
 ];
