@@ -1,122 +1,150 @@
-<div *ngIf="product"  class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-    <div  class="lg:flex  lg:justify-between ">
-        <div  class="flex-1 min-w-0">
-            <img class=" w-[358px] object-cover lg:h-full lg:w-96"
-                src="{{product.product.image}}"
-                alt="Product Image" />
-        </div>
-        <div    class=" flex lg:mt-0 lg:ml-10 ">
-            <div class="max-w-2xl flex flex-col justify-between">
-                <div class="mt-4">
-                    
-                    <h1 class=" text-2xl py-4 text-red-500 font-bold ">{{product.product.name}}</h1>
-                    <span class="mt-1 text-2xl  font-semibold text-red-500">{{product.product.price?.toLocaleString()}}</span> <span
-                        class="mt-1 ml-1 text-sm font-semibold text-gray-500">{{product.product.original_price?.toLocaleString()}}</span>
-                    <br />
-                    <div class="mt-2 ml-2">
-
-                    </div>
-                    <div class="flex items-center mt-2">
-                        <label class="text-gray-700 mr-2" for="quantity">Số lượng :</label>
-                        <div class="relative">
-
-                            <input
-                                class="block appearance-none w-16 py-2 px-3 border border-gray-300 rounded-md text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-3"
-                                id="quantity" type="number" min="1" value="1">
-                            <div class="flex">
-                                <button class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700"
-                                    onclick="decrementQuantity()">
-                                    <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 20 20">
-
-                                    </svg>
-                                </button>
-                                <button class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700"
-                                    onclick="incrementQuantity()">
-                                    <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 20 20">
-
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="ml-12 mt-2">
-                            <p class="text-red-500 text-xl">4.9
-                                <span>&#x2605;</span>
-                                <span>&#x2605;</span>
-                                <span>&#x2605;</span>
-                                <span>&#x2605;</span>
-                                <span>&#x2605;</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <script>
-                        function decrementQuantity() {
-                            const quantityInput = document.getElementById('quantity');
-                            if (quantityInput.value > 1) {
-                                quantityInput.value--;
-                            }
-                        }
-                        function incrementQuantity() {
-                            const quantityInput = document.getElementById('quantity');
-                            quantityInput.value++;
-                        }
-                    </script>
-
-                    <p class=" text-xl font-sans text-gray-600 mt-4  ">{{product.product.description}}</p>
-                        
-                        <div class="flex w-96 m-auto mt-20 ml-[20px]">
-                            <div class=" ">
-                                <button class="bg-green-500 hover:bg-red-700 text-white font-bold text-sm py-2 px-14 rounded ">
-                                    Mua ngay
-                                </button>
-                            </div>
-                            <div class="mt-[-20px] ml-14">
-                                <button class="bg-orange-500 hover:bg-red-500 text-white font-bold text-sm py-1 px-14 rounded mt-6  ">
-                                    Thêm vào giỏ hàng
-                                </button>
-                            </div>
-                        </div>
-                </div>
-
-            </div>
-            
-        </div>
-        
+<div *ngIf="product" class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+  <div class="lg:flex lg:justify-between">
+    <div class="flex-1 min-w-0">
+      <img
+        class="w-[358px] object-cover lg:h-full lg:w-96"
+        src="{{ product.product.image }}"
+        alt="Product Image"
+      />
     </div>
-   
-    <div class="mt-14 ml-24 flex">
+    <div class="flex lg:mt-0 lg:ml-10">
+      <div class="max-w-2xl flex flex-col justify-between">
+        <div class="mt-4">
+          <h1 class="text-2xl py-4 text-red-500 font-bold">
+            {{ product.product.name }}
+          </h1>
+          <span class="mt-1 text-2xl font-semibold text-red-500">{{
+            product.product.price?.toLocaleString()
+          }}</span>
+          <span class="mt-1 ml-1 text-sm font-semibold text-gray-500">{{
+            product.product.original_price?.toLocaleString()
+          }}</span>
+          <br />
+          <div class="mt-2 ml-2"></div>
+          <div class="flex items-center mt-2">
+            <label class="text-gray-700 mr-2" for="quantity">Số lượng :</label>
+            <div class="relative">
+              <input
+                class="block appearance-none w-16 py-2 px-3 border border-gray-300 rounded-md text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-3"
+                id="quantity"
+                type="number"
+                min="1"
+                value="1"
+              />
+              <div class="flex">
+                <button
+                  class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700"
+                  onclick="decrementQuantity()"
+                >
+                  <svg
+                    class="h-4 w-4 fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  ></svg>
+                </button>
+                <button
+                  class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700"
+                  onclick="incrementQuantity()"
+                >
+                  <svg
+                    class="h-4 w-4 fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  ></svg>
+                </button>
+              </div>
+            </div>
+            <div class="ml-12 mt-2">
+              <p class="text-red-500 text-xl">
+                4.9
+                <span>&#x2605;</span>
+                <span>&#x2605;</span>
+                <span>&#x2605;</span>
+                <span>&#x2605;</span>
+                <span>&#x2605;</span>
+              </p>
+            </div>
+          </div>
 
-        <div class="flex -mx-2">
-            <div class="w-1/12 h-12 w-12 ">
-                <img class=" w-full object-cover cursor-pointer"
-                    src="https://www.petmart.vn/wp-content/uploads/2023/04/xuc-xich-cho-meo-vi-ca-ngu-hun-khoi-bowwow-smoked-tuna-meat-stick-300x300.jpg"
-                    alt="Thumbnail 1" />
+          <script>
+            function decrementQuantity() {
+              const quantityInput = document.getElementById("quantity");
+              if (quantityInput.value > 1) {
+                quantityInput.value--;
+              }
+            }
+            function incrementQuantity() {
+              const quantityInput = document.getElementById("quantity");
+              quantityInput.value++;
+            }
+          </script>
+
+          <p class="text-xl font-sans text-gray-600 mt-4">
+            {{ product.product.description }}
+          </p>
+
+          <div class="flex w-96 m-auto mt-20 ml-[20px]">
+            <div class=" ">
+              <button
+                class="bg-green-500 hover:bg-red-700 text-white font-bold text-sm py-2 px-14 rounded"
+              >
+                Mua ngay
+              </button>
             </div>
-            <div class="w-1/12 w-12 h-12">
-                <img class=" w-full  object-cover cursor-pointer"
-                    src="https://www.petmart.vn/wp-content/uploads/2023/04/xuc-xich-cho-meo-vi-ca-ngu-hun-khoi-bowwow-smoked-tuna-meat-stick-300x300.jpg"
-                    alt="Thumbnail 2" />
+            <div class="mt-[-20px] ml-14">
+              <button
+                class="bg-orange-500 hover:bg-red-500 text-white font-bold text-sm py-1 px-14 rounded mt-6"
+                (click)="onAddCart(product.product)"
+              >
+                Thêm vào giỏ hàng
+              </button>
             </div>
-            <div class="w-1/12 h-12 w-12 ">
-                <img class=" w-full object-cover cursor-pointer"
-                    src="https://www.petmart.vn/wp-content/uploads/2023/04/xuc-xich-cho-meo-vi-ca-ngu-hun-khoi-bowwow-smoked-tuna-meat-stick-300x300.jpg"
-                    alt="Thumbnail 3" />
-            </div>
-            <div class="w-1/12 h-12 w-12 ">
-                <img class=" w-full object-cover cursor-pointer"
-                    src="https://www.petmart.vn/wp-content/uploads/2023/04/xuc-xich-cho-meo-vi-ca-ngu-hun-khoi-bowwow-smoked-tuna-meat-stick-300x300.jpg"
-                    alt="Thumbnail 4" />
-            </div>
+          </div>
         </div>
-       
+      </div>
+    </div>
+  </div>
 
+  <div class="mt-14 ml-24 flex">
+    <div class="flex -mx-2">
+      <div class="w-1/12 h-12 w-12">
+        <img
+          class="w-full object-cover cursor-pointer"
+          src="https://www.petmart.vn/wp-content/uploads/2023/04/xuc-xich-cho-meo-vi-ca-ngu-hun-khoi-bowwow-smoked-tuna-meat-stick-300x300.jpg"
+          alt="Thumbnail 1"
+        />
+      </div>
+      <div class="w-1/12 w-12 h-12">
+        <img
+          class="w-full object-cover cursor-pointer"
+          src="https://www.petmart.vn/wp-content/uploads/2023/04/xuc-xich-cho-meo-vi-ca-ngu-hun-khoi-bowwow-smoked-tuna-meat-stick-300x300.jpg"
+          alt="Thumbnail 2"
+        />
+      </div>
+      <div class="w-1/12 h-12 w-12">
+        <img
+          class="w-full object-cover cursor-pointer"
+          src="https://www.petmart.vn/wp-content/uploads/2023/04/xuc-xich-cho-meo-vi-ca-ngu-hun-khoi-bowwow-smoked-tuna-meat-stick-300x300.jpg"
+          alt="Thumbnail 3"
+        />
+      </div>
+      <div class="w-1/12 h-12 w-12">
+        <img
+          class="w-full object-cover cursor-pointer"
+          src="https://www.petmart.vn/wp-content/uploads/2023/04/xuc-xich-cho-meo-vi-ca-ngu-hun-khoi-bowwow-smoked-tuna-meat-stick-300x300.jpg"
+          alt="Thumbnail 4"
+        />
+      </div>
     </div>
-    <div class="flex flex-col mt-10   bg-gray-100 p-4">
-        <h1 class="text-red-500 text-lg font-bold mb-4 justify-center text-center">Các sản phẩm liên quan</h1>
-    </div>
+  </div>
+  <div class="flex flex-col mt-10 bg-gray-100 p-4">
+    <h1 class="text-red-500 text-lg font-bold mb-4 justify-center text-center">
+      Các sản phẩm liên quan
+    </h1>
+  </div>
 </div>
-<div class='text-center '>
-    <button class='text-xl border-gray-500 border-2 px-20	rounded-xl 	'>Xem Thêm</button>
+<div class="text-center">
+  <button class="text-xl border-gray-500 border-2 px-20 rounded-xl">
+    Xem Thêm
+  </button>
 </div>

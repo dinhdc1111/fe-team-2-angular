@@ -9,6 +9,8 @@ import { DashboardManagerComponent } from './pages/admin/dashboard-manager/dashb
 import { ProductDetailComponent } from './pages/client/product-detail/product-detail.component';
 import { ListProductComponent } from './pages/admin/product-manager/list-product/list-product.component';
 import { AuthGuard } from './auth.guard';
+import { CartPageComponent } from './pages/client/cart/cart-page/cart-page.component';
+import { PayComponent } from './pages/client/pay/pay.component';
 
 const routes: Routes = [
   {
@@ -19,6 +21,8 @@ const routes: Routes = [
       { path: 'signin', component: SigninComponent },
       { path: 'signup', component: SignupComponent },
       { path: 'product/:id', component: ProductDetailComponent },
+      { path: 'cart', component: CartPageComponent },
+      { path: 'pay', component: PayComponent },
     ],
   },
   {

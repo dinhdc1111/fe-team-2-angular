@@ -37,23 +37,10 @@ export class SigninComponent {
           if (!response.user) {
             this.toastor.success(response.message);
           } else {
-            // Lưu ng dùng vào localStorage
-            // const token = response.accessToke;
-            // localStorage.setItem('accessToke', token);
-            // localStorage.setItem('role', response?.user?.role);
-
             localStorage.setItem('userInfo', JSON.stringify(response));
 
             // Chuyển hướng đến trang Home
             this.router.navigate(['/']);
-
-            // if (response.user.role === 'admin') {
-            //   console.log('admin');
-            //   this.toastor.success(response.message);
-            // } else {
-            //   console.log('member');
-            //   this.toastor.success(response.message);
-            // }
           }
         },
         // Thông báo lỗi
