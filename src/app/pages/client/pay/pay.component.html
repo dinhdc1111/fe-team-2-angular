@@ -1,0 +1,70 @@
+<body>
+  <div class="pay">
+    <div>
+      <h1>Form Thông tin khách hàng</h1>
+
+      <div class="container">
+        <label class="label" for="customer-name">Tên:</label>
+        <input type="text" id="customer-name" class="input" />
+      </div>
+
+      <div class="container">
+        <label class="label" for="customer-email">Email:</label>
+
+        <input type="text" id="customer-email" class="input" />
+      </div>
+
+      <div class="container">
+        <label class="label" for="customer-email">Sdt:</label>
+
+        <input type="text" id="customer-phone" class="input" />
+      </div>
+      <div class="container">
+        <label class="label" for="customer-email">Mã bưu điện:</label>
+
+        <input type="text" id="customer-phone" class="input" />
+      </div>
+
+      <div class="container">
+        <label class="label" for="customer-address">Địa chỉ:</label>
+        <input type="text" id="customer-address" class="input" />
+      </div>
+
+      <button class="submit-btn" onclick="processPayment()">Đặt hàng</button>
+
+      <label class="label">Phương thức thanh toán:</label>
+      <div class="radio-container">
+        <input
+          type="radio"
+          id="cash"
+          name="payment-method"
+          value="cash"
+          checked
+        />
+        <label class="radio-label" for="cash">Tiền mặt</label><br />
+
+        <input type="radio" id="card" name="payment-method" value="card" />
+        <label class="radio-label" for="card">Thẻ tín dụng</label>
+      </div>
+    </div>
+
+    <div>
+      <h1>Thông tin đơn hàng</h1>
+      <div class="flex mt-10 mb-5">
+        <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">
+          Sản phẩm
+        </h3>
+        <h3
+          class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center"
+        >
+          Giá
+        </h3>
+        <h3
+          class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center"
+        >
+          Tổng
+        </h3>
+      </div>
+    </div>
+  </div>
+</body>
