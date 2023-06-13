@@ -29,36 +29,28 @@ export class ProductListComponent {
     });
   }
   onAddCart(product: any) {
-    const token = localStorage.getItem('user');
-    console.log(token);
+    let idx = this.carts.findIndex((item: any) => {
+      return item.id == product._id;
+    });
 
-    if (!token) {
-      this.toastr.info('Vui lòng đăng nhập để sử dụng các chức năng🥰');
-      this.router.navigate(['/signin']);
+    if (idx >= 0) {
+      this.carts[idx].quantity += 1;
     } else {
-      let idx = this.carts.findIndex((item: any) => {
-        return item.id == product._id;
-      });
-
-      if (idx >= 0) {
-        this.carts[idx].quantity += 1;
-      } else {
-        let cartItem: any = {
-          id: product._id,
-          name: product.name,
-          price: product.price,
-          quantity: product.quantity,
-          subtotal: function () {
-            return this.price * this.quantity;
-          },
-        };
-        this.carts.push(cartItem);
-      }
-      // lưu vào localStorage
-      this.cartService.saveCart(this.carts);
-      this.toastr.success('Thêm giỏ hàng thành công❤️', 'Thành công');
-
-      console.log(this.carts[0].subtotal());
+      let cartItem: any = {
+        id: product._id,
+        name: product.name,
+        price: product.price,
+        quantity: product.quantity,
+        subtotal: function () {
+          return this.price * this.quantity;
+        },
+      };
+      this.carts.push(cartItem);
     }
+    // lưu vào localStorage
+    this.cartService.saveCart(this.carts);
+    this.toastr.success('Thêm giỏ hàng thành công❤️', 'Thành công');
+
+    console.log(this.carts[0].subtotal());
   }
 }
