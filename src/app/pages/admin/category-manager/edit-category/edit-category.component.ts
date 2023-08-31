@@ -41,14 +41,14 @@ export class EditCategoryComponent {
     return this.cateForm.controls
   }
   onHandleSubmit() {
-    const id = this.router.snapshot.paramMap.get('id');
-    if (id) {
-      const cate: ICategory = {
-        _id: id,
-        name: this.cateForm.value.name || ''
-      };
-      if (this.cateForm.valid) {
-        this.CategoryService.update(cate).subscribe((cate: any) => {
+      const id = this.router.snapshot.paramMap.get('id');
+      if(id){
+          const cate: ICategory = {
+          _id: id,
+          name: this.cateForm.value.name || ''
+        };
+      if(this.cateForm.valid){
+        this.CategoryService.update(cate).subscribe((cate:any) => {
           alert(`Sửa sản phẩm thành công`);
           this.routers.navigate(['/admin/listCate'])
         });

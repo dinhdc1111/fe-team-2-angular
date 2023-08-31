@@ -1,0 +1,37 @@
+<div class="overflow-x-auto rounded-lg border border-gray-200">
+    <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+      <thead class="ltr:text-left rtl:text-right">
+        <tr>
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+            ID
+          </th>
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+           Name
+          </th>
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+            Email
+           </th>
+           <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+            Role
+           </th>
+        </tr>
+      </thead>
+    
+      <tbody class="divide-y divide-gray-200" >
+          <tr class="text-center" *ngFor="let user of users; index as i">
+            <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+              {{ i + 1 }}
+            </td>
+            <td class="">{{user.name}}</td>
+            <td class="">{{user.email}}</td>
+            <td class="">{{user.role}}</td>
+            <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+              <button class="mr-[12px] inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500" (click) = "removeItem(user._id)!" >
+                Xóa
+              </button>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+    
