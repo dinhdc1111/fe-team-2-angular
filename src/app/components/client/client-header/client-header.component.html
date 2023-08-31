@@ -3,7 +3,7 @@
     <div class="top-bar__left">
       <ul>
         <li>
-          <a href="tel:0982022969">
+          <a routerLink="tel:0982022969">
             <span class="iconTop icon-1-top"></span>
             <span class="number-phone">
               <b>028.3844.7470</b>
@@ -15,13 +15,13 @@
     <div class="top-bar__right">
       <ul>
         <li>
-          <a href="/signin">
+          <a routerLink="/signin">
             <span class="iconTop icon-4-top"></span>
             <span class="Account">Account</span>
           </a>
         </li>
         <li>
-          <a href="/cart">
+          <a routerLink="/cart">
             <span class="iconTop icon-5-top"></span>
             <span class="Cart">
               Cart (1)
@@ -33,7 +33,7 @@
   </div>
   <div class="site-header" id="main-header">
     <div class="logo">
-      <a href="/">
+      <a routerLink="/">
         <img class="logo-4men"
           src="https://res.cloudinary.com/do9rcgv5s/image/upload/v1680765957/assignment_FE2/k6mfhr0t9e9ttnzm5p4b.png"
           alt="Logo CidiiShop" height="64px" />
@@ -42,35 +42,27 @@
     <nav class="nav">
       <ul class="menu" id="menu">
         <li>
-          <a href="/" class="hover">
+          <a routerLink="/" class="hover">
             home
           </a>
         </li>
         <li>
-          <a href="/" class="hover">
+          <a routerLink="/about" class="hover">
             about
           </a>
         </li>
-        <li>
-          <!-- <Dropdown overlay={menu} placement="bottom">
-                  <a href="/products">
-                      <Space>
-                          products
-                          <DownOutlined />
-                      </Space>
-                  </a>
-              </Dropdown> -->
-          <a href="/" class="hover">
+        <li class="menu-container">
+          <a routerLink="/products" class="hover">
             products
           </a>
         </li>
         <li>
-          <a href="/" class="hover">
+          <a routerLink="/news" class="hover">
             news
           </a>
         </li>
         <li>
-          <a href="/contact" class="hover">
+          <a routerLink="/contact" class="hover">
             Contact us
           </a>
         </li>

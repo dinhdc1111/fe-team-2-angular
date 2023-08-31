@@ -1,74 +1,54 @@
-<div class="flex flex-wrap gap-3 items-center">
+<span class="title-search">Search product:</span>
+<form (ngSubmit)="searchProduct()">
+  <div className="form-field">
+    <input type="text" [(ngModel)]="searchTerm" name="searchTerm" class="form-input" id="minPrice"
+      placeholder="Search..." />
+  </div>
+  <button type="submit" className="btn5-hover btn5"></button>
+</form>
+<h2 class="result">* Found {{products.length}} results</h2>
+<div class="flex flex-wrap gap-7 items-center">
   <div class="card" *ngFor="let product of products">
     <a routerLink="/product/{{ product._id }}">
-      <img
-        class="w-full h-full object-cover max-h-48"
-        src="https://picsum.photos/200/300"
-        alt=""
-      />
+      <img class="w-full h-full object-cover max-h-48" [src]="product.image" [alt]="product.name">
       <div class="p-5 flex flex-col gap-3">
         <div class="flex items-center gap-2">
           <span class="category">stocking</span>
         </div>
-        <h2 class="product-name" title="product-name">{{ product.name }}</h2>
+        <h2 class="product-name" title="product-name">{{product.name}}</h2>
         <div>
-          <span class="text-xl font-bold">{{ product.original_price }}</span>
+          <span class="text-xl font-bold">{{product.original_price}}</span>
           <div class="flex items-center gap-2 mt-1">
-            <span class="text-sm line-through opacity-50">{{
-              product.price
-            }}</span>
+            <span class="text-sm line-through opacity-50">{{product.price}}</span>
             <div class="discount-percent">save 25%</div>
           </div>
         </div>
         <span class="flex items-center mt-1 gap-x-1">
-          <img
-            src="https://res.cloudinary.com/do9rcgv5s/image/upload/v1686258523/txbywsoqkjqvkxntpe5d.svg"
-            width="18px"
-            alt="star"
-          />
-          <img
-            src="https://res.cloudinary.com/do9rcgv5s/image/upload/v1686258523/txbywsoqkjqvkxntpe5d.svg"
-            width="18px"
-            alt="star"
-          />
-          <img
-            src="https://res.cloudinary.com/do9rcgv5s/image/upload/v1686258523/txbywsoqkjqvkxntpe5d.svg"
-            width="18px"
-            alt="star"
-          />
-          <img
-            src="https://res.cloudinary.com/do9rcgv5s/image/upload/v1686258523/txbywsoqkjqvkxntpe5d.svg"
-            width="18px"
-            alt="star"
-          />
-          <img
-            src="https://res.cloudinary.com/do9rcgv5s/image/upload/v1686258523/txbywsoqkjqvkxntpe5d.svg"
-            width="18px"
-            alt="star"
-          />
+          <img src="https://res.cloudinary.com/do9rcgv5s/image/upload/v1686258523/txbywsoqkjqvkxntpe5d.svg" width="18px"
+            alt="star">
+          <img src="https://res.cloudinary.com/do9rcgv5s/image/upload/v1686258523/txbywsoqkjqvkxntpe5d.svg" width="18px"
+            alt="star">
+          <img src="https://res.cloudinary.com/do9rcgv5s/image/upload/v1686258523/txbywsoqkjqvkxntpe5d.svg" width="18px"
+            alt="star">
+          <img src="https://res.cloudinary.com/do9rcgv5s/image/upload/v1686258523/txbywsoqkjqvkxntpe5d.svg" width="18px"
+            alt="star">
+          <img src="https://res.cloudinary.com/do9rcgv5s/image/upload/v1686258523/txbywsoqkjqvkxntpe5d.svg" width="18px"
+            alt="star">
           <span class="text-xs ml-2 text-gray-500">999+ reviews</span>
         </span>
+        <div class="mt-5 flex gap-2">
+          <button class="btn-primary">Add to cart</button>
+          <button class="btn-icon">
+            <img src="https://res.cloudinary.com/do9rcgv5s/image/upload/v1686259754/mljukt3g53wumanjurtz.svg"
+              width="20px" alt="add to wishlist">
+          </button>
+          <button class="btn-icon">
+            <img src="https://res.cloudinary.com/do9rcgv5s/image/upload/v1686260229/no08fhjalvfacty6koem.svg"
+              width="20px" alt="add to wishlist">
+          </button>
+        </div>
       </div>
     </a>
 
-    <div class="mt-5 flex gap-2">
-      <button class="btn-primary" (click)="onAddCart(product)">
-        Add to cart
-      </button>
-      <button class="btn-icon">
-        <img
-          src="https://res.cloudinary.com/do9rcgv5s/image/upload/v1686259754/mljukt3g53wumanjurtz.svg"
-          width="20px"
-          alt="add to wishlist"
-        />
-      </button>
-      <button class="btn-icon">
-        <img
-          src="https://res.cloudinary.com/do9rcgv5s/image/upload/v1686260229/no08fhjalvfacty6koem.svg"
-          width="20px"
-          alt="add to wishlist"
-        />
-      </button>
-    </div>
   </div>
 </div>

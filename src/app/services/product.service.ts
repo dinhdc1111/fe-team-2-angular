@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IProduct } from '../interfaces/Product';
@@ -8,32 +8,40 @@ import { IProduct } from '../interfaces/Product';
 })
 export class ProductService {
   API_URL: string = `http://localhost:3000/api`;
-  token = JSON.parse(localStorage.getItem('userInfo') || '{}').accessToken
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
   getProductById(id: string): Observable<IProduct> {
     return this.http.get<IProduct>(`${this.API_URL}/product/${id}`);
   }
-  // constructor(private http: HttpClient) { }
   getAll(): Observable<{ product: IProduct[] }> {
-    return this.http.get<{ product: IProduct[] }>(`http://localhost:3000/api/product`)
+    return this.http.get<{ product: IProduct[] }>(
+      `http://localhost:3000/api/product`
+    );
   }
   getByID(id: string): Observable<{ product: IProduct }> {
-    return this.http.get<{ product: IProduct }>(`http://localhost:3000/api/product/${id}`)
+    return this.http.get<{ product: IProduct }>(
+      `http://localhost:3000/api/product/${id}`
+    );
   }
   remove(id: string): Observable<IProduct> {
-    return this.http.delete<IProduct>(`http://localhost:3000/api/product/${id}`, {
-      headers: new HttpHeaders().set('Authorization', `Bearer ${this.token}`)
-    }
-    )
+    return this.http.delete<IProduct>(
+      `http://localhost:3000/api/product/${id}`
+    );
   }
   create(product: IProduct): Observable<IProduct> {
-    return this.http.post<IProduct>(`http://localhost:3000/api/product`, product)
+    return this.http.post<IProduct>(
+      `http://localhost:3000/api/product`,
+      product
+    );
   }
   Update(id: string, product: IProduct): Observable<IProduct> {
-    return this.http.put<IProduct>(`http://localhost:3000/api/product/${id}`, product)
+    return this.http.put<IProduct>(
+      `http://localhost:3000/api/product/${id}`,
+      product
+    );
   }
   relatedProducts(categoryId: string): Observable<any> {
-    return this.http.get<any>(`http://localhost:3000/categories/${categoryId}?_embed=product`)
+    return this.http.get<any>(
+      `http://localhost:3000/categories/${categoryId}?_embed=product`
+    );
   }
-
 }

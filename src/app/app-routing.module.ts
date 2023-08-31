@@ -17,6 +17,7 @@ import { ListProductComponent } from './pages/admin/product-manager/list-product
 import { AddCategoryComponent } from './pages/admin/category-manager/add-category/add-category.component';
 import { ListCategoryComponent } from './pages/admin/category-manager/list-category/list-category.component';
 import { EditCategoryComponent } from './pages/admin/category-manager/edit-category/edit-category.component';
+import { ProductListComponent } from './pages/client/product-list/product-list.component';
 const routes: Routes = [
   {
     path: '',
@@ -25,6 +26,7 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'signin', component: SigninComponent },
       { path: 'signup', component: SignupComponent },
+      { path: 'products', component: ProductListComponent },
       { path: 'product/:id', component: ProductDetailComponent },
       { path: 'cart', component: CartPageComponent },
       { path: 'pay', component: PayComponent },
@@ -33,7 +35,7 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminLayoutComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       { path: '', component: DashboardManagerComponent },
       { path: 'add', component: AddProductComponent },
@@ -45,9 +47,8 @@ const routes: Routes = [
     ],
   },
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

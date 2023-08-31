@@ -1,1 +1,35 @@
-
+#minPrice {
+  width: 300px;
+  margin-right: 15px;
+}
+.title-search {
+  margin-bottom: 10px;
+}
+.form-input {
+  padding: 0 20px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+  transition: 0.25s ease;
+}
+.form-input:focus-visible {
+  outline: none;
+}
+.form-input:focus {
+  border-color: #6a5af9;
+}
+.form-field {
+  position: relative;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+.title-search {
+  font-size: 15px;
+}
+.result {
+  color: red;
+  margin: 20px 0;
+  font-size: 34px;
+  display: none;
+}
