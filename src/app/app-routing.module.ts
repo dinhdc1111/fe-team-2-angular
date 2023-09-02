@@ -17,6 +17,8 @@ import { ListProductComponent } from './pages/admin/product-manager/list-product
 import { AddCategoryComponent } from './pages/admin/category-manager/add-category/add-category.component';
 import { ListCategoryComponent } from './pages/admin/category-manager/list-category/list-category.component';
 import { EditCategoryComponent } from './pages/admin/category-manager/edit-category/edit-category.component';
+import { ProductListComponent } from './pages/client/product-list/product-list.component';
+import { ListUserComponent } from './pages/admin/users/list-user/list-user.component';
 const routes: Routes = [
   {
     path: '',
@@ -34,7 +36,6 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminLayoutComponent,
-    // canActivate: [AuthGuard],
     children: [
       { path: '', component: DashboardManagerComponent },
       { path: 'add', component: AddProductComponent },
@@ -43,7 +44,7 @@ const routes: Routes = [
       { path: 'addCate', component: AddCategoryComponent },
       { path: 'listCate', component: ListCategoryComponent },
       { path: 'editCate/:id', component: EditCategoryComponent },
-      {path: 'listUser',component:ListUserComponent}
+      { path: 'listUser', component: ListUserComponent },
     ],
   },
 ];
